@@ -13,7 +13,7 @@
     background-color: #9cb071;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0.2, 0.2);
     position: relative;
     max-width: 350px;
     width: 100%;
