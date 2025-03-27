@@ -1,0 +1,273 @@
+/* Overall Page Background */
+body {
+    background-color: #1a1333; /* main background */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Top Bar with Darker Background */
+  .top-bar {
+    background-color: #0f0b16; /* darker background for top bar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 999;
+  }
+  
+  /* Brand Container (Logo + "Elevate X") on the Left */
+  .brand-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brand-logo {
+    height: 60px; /* bigger logo */
+    margin-right: 15px;
+  }
+  
+  .brand-name {
+    font-size: 32px; /* bigger text */
+    font-weight: bold;
+    color: #ff2770; /* pinkish hue */
+  }
+  
+  /* Home Button on the Right */
+  .home-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #45f3ff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #45f3ff;
+    color: #1a1333;
+  }
+  
+  /* "News & Trends" Title and Subtitle */
+  .page-title {
+    margin-top: 40px; /* spacing below top bar */
+    text-align: center;
+    font-size: 36px;
+    background: linear-gradient(to right, #45f3ff, #ff2770);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin: 0 0 30px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  /* Grid Layout for Integrated Section */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  /* Box Styles for Each Category */
+  .job-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.5s ease;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+  
+  .job-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #45f3ff;
+    border-radius: 10px;
+    opacity: 0.6;
+    clip-path: inset(0 0 95% 95%);
+    transition: all 0.3s ease;
+  }
+  
+  .job-box:hover::before {
+    clip-path: inset(0);
+    opacity: 1;
+  }
+  
+  .job-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #45f3ff, 0 0 40px #ff2770;
+    animation: hueRotate 1s infinite alternate;
+  }
+  
+  @keyframes hueRotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+  
+  .icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Job and Trend Lists */
+  .job-list, .trend-list {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .job-list li, .trend-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .job-list li:hover, .trend-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .trend-title {
+    font-weight: bold;
+    color: #45f3ff;
+    display: block;
+  }
+  
+  .trend-desc {
+    display: block;
+    margin-top: 5px;
+    opacity: 0.9;
+    font-size: 13px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    color: #ff2770;
+    margin-top: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: #2a2238;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    color: white;
+    text-align: left;
+  }
+  
+  .modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Footer Section */
+  footer {
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .footer-title {
+    color: #ff2770;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #45f3ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #45f3ff;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-btn:hover {
+    background-color: #45f3ff;
+    color: #1a1333;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .brand-logo {
+      height: 40px;
+    }
+    .brand-name {
+      font-size: 24px;
+    }
+    .page-title {
+      font-size: 28px;
+      margin-top: 40px;
+    }
+    .top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+    .home-button {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+  }
